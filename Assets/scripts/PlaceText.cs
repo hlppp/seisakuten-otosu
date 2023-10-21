@@ -7,6 +7,8 @@ using UnityEngine.XR.ARSubsystems;
 using UnityEngine.UI;
 using System.Collections;
 
+using Photon.Pun;
+
 public class PlaceText : MonoBehaviour
 {
     private ARRaycastManager arRaycastManager;
@@ -30,7 +32,7 @@ public class PlaceText : MonoBehaviour
     // private string imageURL = "http://10.100.20.78:6788/images/"; // commons hanlin
     private string imageURL = "http://192.168.100.170:6789/images/";
 
-
+    [SerializeField] private GameObject canvasObjectPrefab;
     // private string imageURL = "http://192.168.1.153:6789/images/"; // 家G
 
     void Start()
@@ -88,12 +90,17 @@ public class PlaceText : MonoBehaviour
         Quaternion airQua = Quaternion.LookRotation(-arOrigin.camera.transform.forward, arOrigin.camera.transform.up);
         var anchor = anchorManager.AddAnchor(new Pose(airPos, airQua));
 
-        GameObject newCanvasObject = new GameObject();
-        Canvas newCanvas =  newCanvasObject.AddComponent<Canvas>();
-        newCanvas.renderMode = RenderMode.WorldSpace;
+        //GameObject newCanvasObject = new GameObject();
+        //Canvas newCanvas =  newCanvasObject.AddComponent<Canvas>();
+        //newCanvas.renderMode = RenderMode.WorldSpace;
 
-        GameObject imageObject = new GameObject();
-        imageObject.transform.SetParent(newCanvasObject.transform , false);
+        //GameObject imageObject = new GameObject();
+        //imageObject.transform.SetParent(newCanvasObject.transform , false);
+        //imageObject.transform.position = airPos;
+        //imageObject.transform.rotation = airQua;
+
+        PhotonNetwork.Instantiate(canvasObjectPrefab.name, Vector3.zero, Quaternion.identity);
+        GameObject imageObject = canvasObjectPrefab.transform.GetChild(0).gameObject;
         imageObject.transform.position = airPos;
         imageObject.transform.rotation = airQua;
 
@@ -101,7 +108,9 @@ public class PlaceText : MonoBehaviour
         cat.sprite = newSprite;
         cat.rectTransform.localScale = new Vector3(-cat.sprite.bounds.size.x/1000f, cat.sprite.bounds.size.y/1000f, 1f);
 
-        newCanvasObject.transform.parent = anchor.transform;
+        canvasObjectPrefab.transform.parent = anchor.transform;
+
+
 
         // Deleting the image from the server
         using (UnityWebRequest deleteRequest = new UnityWebRequest(url, "DELETE"))
