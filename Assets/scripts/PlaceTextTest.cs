@@ -9,7 +9,7 @@ using System.Collections;
 
 using Photon.Pun;
 
-public class PlaceTextTest : MonoBehaviourPunCallbacks, IPunObservable
+public class PlaceTextTest : MonoBehaviourPunCallbacks //, IPunObservable
 {
     private ARRaycastManager arRaycastManager;
     private ARSessionOrigin arOrigin;
@@ -63,7 +63,7 @@ public class PlaceTextTest : MonoBehaviourPunCallbacks, IPunObservable
             firstPlaneDetected = true;
         }
     }
-
+    
     private IEnumerator LoadImage(string url, float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -104,56 +104,23 @@ public class PlaceTextTest : MonoBehaviourPunCallbacks, IPunObservable
         }
         text_image.sprite = newSprite;
         text_image.rectTransform.localScale = new Vector3(-text_image.sprite.bounds.size.x / 1000f, text_image.sprite.bounds.size.y / 1000f, 1f);
-        
-    
-        // Deleting the image from the server
-        using (UnityWebRequest deleteRequest = new UnityWebRequest(url, "DELETE"))
-        {
-            yield return deleteRequest.SendWebRequest();
-
-            if (deleteRequest.result == UnityWebRequest.Result.Success)
-            {
-                Debug.Log("Image successfully deleted from server.");
-            }
-            else
-            {
-                Debug.Log("Error deleting image from server: " + deleteRequest.error);
-            }
-        }
 
         newSprite = null;
-
-        // newCanvasObject.transform.SetParent(anchor.transform , false);
-
-        // Debug.Log("catAnchor"+anchor.transform.position);
-        // Debug.Log("catCanvas"+newCanvasObject.transform.position);
-        // Debug.Log("catImage"+cat.rectTransform.position);
-
-        // yield break;
     }
-
-
+    
+    [PunRPC] 
     public void PlaceOnAir()
     {
         // string imageFilename = "processed_image.png";
         // string imageFilename = "No1audio.png"; //hanlin iphone14
         string imageFilename = selectedDevice + ".png"; //hanlin ipad
         StartCoroutine(LoadImage(imageURL + imageFilename, Delay));
+        Debug.Log("Place start");
     }
-
-    // IPunObservableインターフェースを実装して、PhotonViewの監視対象コンポーネントにする
-    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    
+    public void RPC_PlaceOnAir()
     {
-        if (stream.IsWriting)
-        {
-            // 画像をストリームに書き込んで送信する
-            stream.SendNext(text_image);
-        }
-        else
-        {
-            // 受信したストリームを読み込んで画像を更新する
-            text_image = (Image)stream.ReceiveNext();
-        }
+        photonView.RPC("PlaceOnAir", RpcTarget.All);
     }
 
 }
