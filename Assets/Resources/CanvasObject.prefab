@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3080886201786747506}
   - component: {fileID: 8534806750482781234}
   - component: {fileID: 5067757865179930604}
+  - component: {fileID: 2990493981795067715}
   m_Layer: 0
   m_Name: CanvasObject
   m_TagString: Untagged
@@ -78,7 +79,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 8534806750482781234}
@@ -113,8 +114,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa4dc66b6bbd47909342dc8b0c763cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text_image: {fileID: 5780544959782023134}
   selectedDevice: Pad
   Delay: 3
+--- !u!222 &2990493981795067715
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97086560973635461}
+  m_CullTransparentMesh: 1
 --- !u!1 &850042139066374787
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +178,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850042139066374787}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

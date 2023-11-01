@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 public class SetImage : MonoBehaviourPunCallbacks
 {
     private Sprite newSprite;
-    private Image text_image;
+    public Image text_image;
     public string selectedDevice;
     public float Delay;
     private string imageURL = "http://10.100.5.53:6789/images/"; // commons hanlin
@@ -17,6 +17,13 @@ public class SetImage : MonoBehaviourPunCallbacks
     void Start()
     {
         
+        if (photonView.IsMine || !PhotonNetwork.IsConnected)
+        {
+            // Debug.Log("ready to load image");
+            photonView.RPC(nameof(StartLoadImage), RpcTarget.All);
+        }
+        
+        //photonView.RPC(nameof(StartLoadImage), RpcTarget.All);
     }
 
     // Update is called once per frame
@@ -28,6 +35,7 @@ public class SetImage : MonoBehaviourPunCallbacks
     private IEnumerator LoadImage(string url, float delay)
     {
         yield return new WaitForSeconds(delay);
+        // Debug.Log("start loading image");
         using (UnityWebRequest www = UnityWebRequestTexture.GetTexture(url))
         {
             yield return www.SendWebRequest();
@@ -48,15 +56,18 @@ public class SetImage : MonoBehaviourPunCallbacks
         {
             yield return null;  // wait for the next frame
         }
-
-        text_image = this.GetComponentInChildren<Image>();
+        
+        text_image.enabled = true;
+        /*
         if (text_image == null)
         {
             Debug.Log("imagechild is null");
         }
+        */
+        
         text_image.sprite = newSprite;
         text_image.rectTransform.localScale = new Vector3(-text_image.sprite.bounds.size.x / 1000f, text_image.sprite.bounds.size.y / 1000f, 1f);
-
+        
         newSprite = null;
     }
 
@@ -65,10 +76,5 @@ public class SetImage : MonoBehaviourPunCallbacks
     {
         string imageFilename = selectedDevice + ".png";
         StartCoroutine(LoadImage(imageURL + imageFilename, Delay));
-    }
-
-    public void RPCStartLoadImage()
-    {
-        photonView.RPC(nameof(StartLoadImage), RpcTarget.All);
     }
 }

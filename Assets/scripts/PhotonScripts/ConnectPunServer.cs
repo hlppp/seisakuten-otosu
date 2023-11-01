@@ -14,7 +14,7 @@ public class ConnectPunServer : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
-        PhotonNetwork.JoinOrCreateRoom("OtosuRoom", new RoomOptions(), TypedLobby.Default);
+        PhotonNetwork.JoinOrCreateRoom("OtosuRoom", new RoomOptions(){CleanupCacheOnLeave = false}, TypedLobby.Default);
     }
 
     public override void OnJoinedRoom()
