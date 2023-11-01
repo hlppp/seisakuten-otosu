@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2207120432908984337}
   - component: {fileID: 3080886201786747506}
   - component: {fileID: 8534806750482781234}
+  - component: {fileID: 5067757865179930604}
   m_Layer: 0
   m_Name: CanvasObject
   m_TagString: Untagged
@@ -100,6 +101,20 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
+--- !u!114 &5067757865179930604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97086560973635461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa4dc66b6bbd47909342dc8b0c763cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedDevice: Pad
+  Delay: 3
 --- !u!1 &850042139066374787
 GameObject:
   m_ObjectHideFlags: 0

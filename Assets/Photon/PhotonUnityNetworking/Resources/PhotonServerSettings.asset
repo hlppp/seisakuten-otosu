@@ -41,6 +41,7 @@ MonoBehaviour:
   - RespawnSpaceship
   - LoadImage
   - PlaceOnAir
+  - StartLoadImage
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

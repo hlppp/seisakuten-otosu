@@ -1080,8 +1080,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugText: {fileID: 2089110260}
   distanceInFrontOfCamera: 0.5
-  Delay: 3
-  selectedDevice: Pad
   canvasObjectPrefab: {fileID: 97086560973635461, guid: 6ce1764cbd62443269d100124ad9aa81,
     type: 3}
 --- !u!1 &705507993
@@ -1678,7 +1676,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 388525039}
         m_TargetAssemblyTypeName: PlaceTextTest, Assembly-CSharp
-        m_MethodName: RPC_PlaceOnAir
+        m_MethodName: PlaceOnAir
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

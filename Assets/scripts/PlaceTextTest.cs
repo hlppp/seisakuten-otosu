@@ -20,14 +20,14 @@ public class PlaceTextTest : MonoBehaviourPunCallbacks //, IPunObservable
 
     public TMPro.TextMeshProUGUI debugText;
     public float distanceInFrontOfCamera = 0.5f;
-    public float Delay;
+    //public float Delay;
 
-    public string selectedDevice;
+    //public string selectedDevice;
 
-    private Sprite newSprite;
+    //private Sprite newSprite;
     // private string imageURL = "http://10.100.176.125:5000/images/"; // commons arjen
     // private string imageURL = "http://192.168.100.137:5050/images/"; // inami2.4
-    private string imageURL = "http://10.100.5.53:6789/images/"; // commons hanlin
+    //private string imageURL = "http://10.100.5.53:6789/images/"; // commons hanlin
     // private string imageURL = "http://10.100.20.78:6789/images/"; // commons hanlin
     // private string imageURL = "http://10.100.20.78:6788/images/"; // commons hanlin
     // private string imageURL = "http://192.168.100.170:6789/images/"; // nakayama
@@ -64,8 +64,9 @@ public class PlaceTextTest : MonoBehaviourPunCallbacks //, IPunObservable
         }
     }
     
-    private IEnumerator LoadImage(string url, float delay)
+    private void CreateCanvas()
     {
+        /*
         yield return new WaitForSeconds(delay);
         using (UnityWebRequest www = UnityWebRequestTexture.GetTexture(url))
         {
@@ -87,6 +88,7 @@ public class PlaceTextTest : MonoBehaviourPunCallbacks //, IPunObservable
         {
             yield return null;  // wait for the next frame
         }
+        */
 
         Vector3 airPos = arOrigin.camera.transform.position + arOrigin.camera.transform.forward * distanceInFrontOfCamera;
         Quaternion airQua = Quaternion.LookRotation(-arOrigin.camera.transform.forward, arOrigin.camera.transform.up);
@@ -96,7 +98,10 @@ public class PlaceTextTest : MonoBehaviourPunCallbacks //, IPunObservable
         {
             Debug.Log("canvasObj is null");
         }
-        
+        SetImage set = canvasObj.GetComponent<SetImage>();
+        set.RPCStartLoadImage();
+
+        /*
         text_image = canvasObj.GetComponentInChildren<Image>();
         if (text_image == null)
         {
@@ -106,21 +111,16 @@ public class PlaceTextTest : MonoBehaviourPunCallbacks //, IPunObservable
         text_image.rectTransform.localScale = new Vector3(-text_image.sprite.bounds.size.x / 1000f, text_image.sprite.bounds.size.y / 1000f, 1f);
 
         newSprite = null;
+        */
     }
     
-    [PunRPC] 
     public void PlaceOnAir()
     {
         // string imageFilename = "processed_image.png";
         // string imageFilename = "No1audio.png"; //hanlin iphone14
-        string imageFilename = selectedDevice + ".png"; //hanlin ipad
-        StartCoroutine(LoadImage(imageURL + imageFilename, Delay));
-        Debug.Log("Place start");
+        //string imageFilename = selectedDevice + ".png"; //hanlin ipad
+        //StartCoroutine(LoadImage(imageURL + imageFilename, Delay));
+        CreateCanvas();
     }
     
-    public void RPC_PlaceOnAir()
-    {
-        photonView.RPC("PlaceOnAir", RpcTarget.All);
-    }
-
 }
