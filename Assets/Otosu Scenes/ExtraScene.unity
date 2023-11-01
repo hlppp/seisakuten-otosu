@@ -1046,7 +1046,7 @@ MonoBehaviour:
   debugText: {fileID: 2089110260}
   distanceInFrontOfCamera: 0.5
   Delay: 3
-  selectedDevice: XR
+  selectedDevice: Pad
   canvasObjectPrefab: {fileID: 97086560973635461, guid: 6ce1764cbd62443269d100124ad9aa81,
     type: 3}
 --- !u!114 &388525038
@@ -1235,7 +1235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd6e2a70dc9442a38a64a549511fdb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedDevice: XR
+  selectedDevice: Pad
 --- !u!114 &782628377
 MonoBehaviour:
   m_ObjectHideFlags: 0

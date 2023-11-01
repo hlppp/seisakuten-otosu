@@ -27,13 +27,13 @@ public class PlaceText : MonoBehaviour
     private Sprite newSprite;
     // private string imageURL = "http://10.100.176.125:5000/images/"; // commons arjen
     // private string imageURL = "http://192.168.100.137:5050/images/"; // inami2.4
-    // private string imageURL = "http://10.100.5.53:6789/images/"; // commons hanlin
+    private string imageURL = "http://10.100.5.53:6789/images/"; // commons hanlin
     // private string imageURL = "http://10.100.20.78:6789/images/"; // commons hanlin
     // private string imageURL = "http://10.100.20.78:6788/images/"; // commons hanlin
-    private string imageURL = "http://192.168.100.170:6789/images/";
+    // private string imageURL = "http://192.168.100.170:6789/images/"; // nakayama
+    // private string imageURL = "http://192.168.1.153:6789/images/"; // hanlin home
 
     [SerializeField] private GameObject canvasObjectPrefab;
-    // private string imageURL = "http://192.168.1.153:6789/images/"; // 家G
 
     void Start()
     {

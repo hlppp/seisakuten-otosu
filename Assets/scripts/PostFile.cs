@@ -61,7 +61,10 @@ public class PostFile : MonoBehaviour
     
     // private string url = "http://10.100.20.78:6789/upload"; 
     // private string url = "http://10.100.20.78:6788/upload"; 
-    private string url = "http://192.168.100.170:6789/upload"; 
+    // private string url = "http://192.168.100.170:6789/upload"; 
+    // private string url = "http://192.168.1.153:6789/upload"; 
+    private string url = "http://10.100.5.53:6789/upload"; 
+    
     // void start()
     // {
     //     string selectedDevice = placeText.selectedDevice;
