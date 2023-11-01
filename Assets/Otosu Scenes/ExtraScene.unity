@@ -941,6 +941,7 @@ GameObject:
   - component: {fileID: 388525035}
   - component: {fileID: 388525037}
   - component: {fileID: 388525038}
+  - component: {fileID: 388525039}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -1038,7 +1039,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388525029}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 507f43e9d011748e8862bc043ca031d7, type: 3}
   m_Name: 
@@ -1065,6 +1066,24 @@ MonoBehaviour:
     type: 2}
   m_MaxNumberOfMovingImages: 1
   m_TrackedImagePrefab: {fileID: 760363339}
+--- !u!114 &388525039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388525029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2420b7acf46544589875f70f4a80e8e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugText: {fileID: 2089110260}
+  distanceInFrontOfCamera: 0.5
+  Delay: 3
+  selectedDevice: Pad
+  canvasObjectPrefab: {fileID: 97086560973635461, guid: 6ce1764cbd62443269d100124ad9aa81,
+    type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,8 +1676,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 388525037}
-        m_TargetAssemblyTypeName: PlaceText, Assembly-CSharp
+      - m_Target: {fileID: 388525039}
+        m_TargetAssemblyTypeName: PlaceTextTest, Assembly-CSharp
         m_MethodName: PlaceOnAir
         m_Mode: 1
         m_Arguments:

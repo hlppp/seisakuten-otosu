@@ -9,7 +9,7 @@ using System.Collections;
 
 using Photon.Pun;
 
-public class PlaceText_test : MonoBehaviourPunCallbacks, IPunObservable
+public class PlaceTextTest : MonoBehaviourPunCallbacks, IPunObservable
 {
     private ARRaycastManager arRaycastManager;
     private ARSessionOrigin arOrigin;
@@ -90,28 +90,21 @@ public class PlaceText_test : MonoBehaviourPunCallbacks, IPunObservable
 
         Vector3 airPos = arOrigin.camera.transform.position + arOrigin.camera.transform.forward * distanceInFrontOfCamera;
         Quaternion airQua = Quaternion.LookRotation(-arOrigin.camera.transform.forward, arOrigin.camera.transform.up);
-        // var anchor = anchorManager.AddAnchor(new Pose(airPos, airQua));
 
-        //GameObject newCanvasObject = new GameObject();
-        //Canvas newCanvas =  newCanvasObject.AddComponent<Canvas>();
-        //newCanvas.renderMode = RenderMode.WorldSpace;
-
-        //GameObject imageObject = new GameObject();
-        //imageObject.transform.SetParent(newCanvasObject.transform , false);
-        //imageObject.transform.position = airPos;
-        //imageObject.transform.rotation = airQua;
-
-        PhotonNetwork.Instantiate(canvasObjectPrefab.name, airPos, airQua);
-        GameObject imageObject = canvasObjectPrefab.transform.GetChild(0).gameObject;
-        //imageObject.transform.position = airPos;
-        //imageObject.transform.rotation = airQua;
-
-        text_image = imageObject.GetComponent<Image>();
+        var canvasObj = PhotonNetwork.Instantiate(canvasObjectPrefab.name, airPos, airQua);
+        if (canvasObj == null)
+        {
+            Debug.Log("canvasObj is null");
+        }
+        
+        text_image = canvasObj.GetComponentInChildren<Image>();
+        if (text_image == null)
+        {
+            Debug.Log("imagechild is null");
+        }
         text_image.sprite = newSprite;
         text_image.rectTransform.localScale = new Vector3(-text_image.sprite.bounds.size.x / 1000f, text_image.sprite.bounds.size.y / 1000f, 1f);
-
-        //canvasObjectPrefab.transform.parent = anchor.transform;
-
+        
     
         // Deleting the image from the server
         using (UnityWebRequest deleteRequest = new UnityWebRequest(url, "DELETE"))
