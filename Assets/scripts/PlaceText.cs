@@ -147,4 +147,12 @@ public class PlaceText : MonoBehaviour
         StartCoroutine(LoadImage(imageURL + imageFilename, Delay));
     }
 
+    public void PlaceCanvasTest()
+    {
+        Vector3 airPos = arOrigin.camera.transform.position + arOrigin.camera.transform.forward * distanceInFrontOfCamera;
+        Quaternion airQua = Quaternion.LookRotation(-arOrigin.camera.transform.forward, arOrigin.camera.transform.up);
+        var anchor = anchorManager.AddAnchor(new Pose(airPos, airQua));
+        PhotonNetwork.Instantiate(canvasObjectPrefab.name, airPos, airQua);
+    }
+
 }
