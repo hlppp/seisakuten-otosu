@@ -7,13 +7,14 @@ using UnityEngine.Networking;
 
 public class SetImage : MonoBehaviourPunCallbacks
 {
+    public int freq;
+
     private Sprite newSprite;
     public Image text_image;
     public string selectedDevice;
     public float Delay;
     private string imageURL = "http://10.100.5.53:6789/images/"; // commons hanlin
 
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -26,7 +27,6 @@ public class SetImage : MonoBehaviourPunCallbacks
         //photonView.RPC(nameof(StartLoadImage), RpcTarget.All);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -35,9 +35,9 @@ public class SetImage : MonoBehaviourPunCallbacks
     private IEnumerator LoadImage(string url, float delay)
     {
         yield return new WaitForSeconds(delay);
-        // Debug.Log("start loading image");
         using (UnityWebRequest www = UnityWebRequestTexture.GetTexture(url))
         {
+            //データが帰ってくるまで待機状態にする
             yield return www.SendWebRequest();
 
             if (www.result == UnityWebRequest.Result.Success)
@@ -48,6 +48,7 @@ public class SetImage : MonoBehaviourPunCallbacks
             }
             else
             {
+                //エラー確認
                 Debug.Log("Unable to load image: " + www.error);
             }
         }
