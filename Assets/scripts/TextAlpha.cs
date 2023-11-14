@@ -8,21 +8,23 @@ using UnityEngine.UI;
 
 public class TextAlpha : MonoBehaviour
 {
+    private GameObject _freqManObj;
     private FreqMan _freqMan;
     private int _deviceFreq;
     private int _exdeviceFreq;
     private Image _textImage;
     private float _alpha;
     
-    public float TextFreq;
+    public int TextFreq{ get; set; }
     
     // Start is called before the first frame update
     void Start()
     {
-        _freqMan = FindObjectOfType<FreqMan>();
+        _freqManObj = GameObject.Find("FrequencyManager");
+        _freqMan = _freqManObj.GetComponent<FreqMan>();
         _deviceFreq = _freqMan.DeviceFreq;
         _exdeviceFreq = _deviceFreq;
-        Image textImage = GetComponent<Image>();
+        _textImage = GetComponentInChildren<Image>();
     }
 
     // Update is called once per frame
@@ -30,14 +32,19 @@ public class TextAlpha : MonoBehaviour
     {
         _exdeviceFreq = _deviceFreq;
         _deviceFreq = _freqMan.DeviceFreq;
-        if (Mathf.Abs(_deviceFreq - _exdeviceFreq) > 5)
+        if (_deviceFreq != _exdeviceFreq)
         {
+            Debug.Log("Begin updating alpha");
+            // Debug.Log("text Freq: " + TextFreq);
             UpdateAlpha();
         }
+        
+        //UpdateAlpha();
     }
     
     private void UpdateAlpha()
     {
+        Debug.Log("Begin updating alpha");
         float d = Mathf.Abs(_deviceFreq - TextFreq);
         if (d > 50)
         {

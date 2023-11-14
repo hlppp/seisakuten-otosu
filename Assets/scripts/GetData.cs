@@ -20,9 +20,11 @@ public class GetData : MonoBehaviourPunCallbacks
     private string imageURL = "http://10.100.5.53:6789/images/"; // Replace with your server's image endpoint
     
     private string _filename;
+    public int tfreq;
 
     private GameObject voiceObj;
     private PostFile _postFile;
+    private TextAlpha _textAlpha;
     void Start()
     {
         if (photonView.IsMine || !PhotonNetwork.IsConnected)
@@ -31,6 +33,8 @@ public class GetData : MonoBehaviourPunCallbacks
         }
         voiceObj = GameObject.Find("Audio");
         _postFile = voiceObj.GetComponent<PostFile>();
+        
+        _textAlpha = GetComponent<TextAlpha>();
     }
 
     private IEnumerator LoadImageAndData(float delay)
@@ -44,10 +48,10 @@ public class GetData : MonoBehaviourPunCallbacks
 
             if (www.result == UnityWebRequest.Result.Success)
             {
-                ServerResponse response = JsonUtility.FromJson<ServerResponse>(www.downloadHandler.text);
-                int freq = response.frequency;
-                Debug.Log("Frequency: " + freq);
-
+                ServerResponse response = JsonUtility.FromJson<ServerResponse>(www.downloadHandler.text); 
+                tfreq = response.frequency;
+                Debug.Log("Frequency: " + tfreq);
+                _textAlpha.TextFreq = tfreq;
                 byte[] imageBytes = Convert.FromBase64String(response.image_data);
                 Texture2D texture = new Texture2D(2, 2);
                 texture.LoadImage(imageBytes); // Load the image

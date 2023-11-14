@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2990493981795067715}
   - component: {fileID: 1803879447665340098}
   - component: {fileID: 885271528351402713}
+  - component: {fileID: 6673266834219629779}
   m_Layer: 0
   m_Name: CanvasObject
   m_TagString: Untagged
@@ -156,6 +157,20 @@ MonoBehaviour:
   text_image: {fileID: 5780544959782023134}
   selectedDevice: Pad
   Delay: 3
+  tfreq: 0
+--- !u!114 &6673266834219629779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97086560973635461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5607527dc2a4e96ad73fb0d63ea56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextFreq: 0
 --- !u!1 &850042139066374787
 GameObject:
   m_ObjectHideFlags: 0
