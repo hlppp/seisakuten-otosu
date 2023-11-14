@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FreqMan : MonoBehaviour
 {
     public Slider freqSlider;
-    public int DeviceFreq = 0;
+    [HideInInspector] public int DeviceFreq = 0;
 
     // Start is called before the first frame update
     void Start()

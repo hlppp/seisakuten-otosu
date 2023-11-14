@@ -17,35 +17,34 @@ public class GetData : MonoBehaviourPunCallbacks
     public Image text_image;
     public string selectedDevice;
     public float Delay;
-    private string imageURL = "http://10.100.5.53:6789/images/"; // Replace with your server's image endpoint
-    
+    //private string imageURL = "http://10.100.5.53:6789/images/"; // TokyoU000
+    private string imageURL = "http://192.168.1.103:6789/images/"; // HomeA
     private string _filename;
     public int tfreq;
 
     private GameObject voiceObj;
     private PostFile _postFile;
     private TextAlpha _textAlpha;
+    private string end;
     void Start()
     {
         if (photonView.IsMine || !PhotonNetwork.IsConnected)
         {
-            photonView.RPC(nameof(StartLoadData), RpcTarget.AllBuffered);
+            StartCoroutine(LoadFile());
+            Debug.Log("HERE"+end);
         }
         voiceObj = GameObject.Find("Audio");
         _postFile = voiceObj.GetComponent<PostFile>();
-        
         _textAlpha = GetComponent<TextAlpha>();
     }
 
-    private IEnumerator LoadImageAndData(float delay)
+    private IEnumerator LoadImageAndData(string endpoint)
     {
-        yield return new WaitForSeconds(delay);
-        _filename = _postFile.filename;
-        string imageEndpoint = imageURL + _filename + ".png"; // Construct the URL
-        using (UnityWebRequest www = UnityWebRequest.Get(imageEndpoint))
+        // yield return new WaitForSeconds(delay);
+        using (UnityWebRequest www = UnityWebRequest.Get(endpoint))
         {
             yield return www.SendWebRequest();
-
+            // _filename = _postFile.filename;
             if (www.result == UnityWebRequest.Result.Success)
             {
                 ServerResponse response = JsonUtility.FromJson<ServerResponse>(www.downloadHandler.text); 
@@ -75,9 +74,22 @@ public class GetData : MonoBehaviourPunCallbacks
         }
     }
     
-    [PunRPC]
-    public void StartLoadData()
+    private IEnumerator LoadFile()
     {
-        StartCoroutine(LoadImageAndData(Delay));
+        yield return new WaitForSeconds(Delay);
+        _filename = _postFile.filename;
+        end = imageURL + _filename + ".png"; // Construct the URL
+        Debug.Log("first HERE"+end);
+        //StartCoroutine(LoadImageAndData(imageEndpoint));
+        photonView.RPC(nameof(StartLoadData), RpcTarget.AllBuffered, end);
     }
+    
+    [PunRPC]
+    public void StartLoadData(string url)
+    {
+        // string imageEndpoint = imageURL + _filename + ".png"; // Construct the URL
+        StartCoroutine(LoadImageAndData(url));
+        //StartCoroutine(LoadFile(Delay));
+    }
+    
 }

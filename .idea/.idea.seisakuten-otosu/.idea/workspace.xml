@@ -7,10 +7,11 @@
     <list default="true" id="9fc3039f-1914-4b8b-804e-fd19cefa6353" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.seisakuten-otosu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.seisakuten-otosu/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Otosu Scenes/ExtraScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Otosu Scenes/ExtraScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/CanvasObject.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/CanvasObject.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/scripts/FreqMan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/FreqMan.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/scripts/GetData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/GetData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scripts/TextAlpha.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/TextAlpha.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/PostFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/PostFile.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +27,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/scripts/TextAlpha.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Button/ButtonTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arkit@4.2.8/Editor/ACTool.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,

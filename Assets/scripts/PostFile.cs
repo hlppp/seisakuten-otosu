@@ -59,13 +59,13 @@ public class PostFile : MonoBehaviour
 {
     // public PlaceText placeText;
     public string selectedDevice;
-    public string filename;
+    [HideInInspector] public string filename;
     
     // private string url = "http://10.100.20.78:6789/upload"; 
     // private string url = "http://10.100.20.78:6788/upload"; 
     // private string url = "http://192.168.100.170:6789/upload"; 
-    // private string url = "http://192.168.1.153:6789/upload"; 
-    private string url = "http://10.100.5.53:6789/upload"; 
+    private string url = "http://192.168.1.103:6789/upload"; //HomeA
+    // private string url = "http://10.100.5.53:6789/upload"; // TokyoU000
     
     // void start()
     // {
