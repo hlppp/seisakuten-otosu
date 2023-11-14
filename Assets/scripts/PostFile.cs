@@ -52,6 +52,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using System;
 
 
 public class PostFile : MonoBehaviour
@@ -84,8 +85,9 @@ public class PostFile : MonoBehaviour
         WWWForm form = new WWWForm();
         
         // form.AddBinaryData("audioA", fileData, "No1audio.wav", "audio/wav");//hanlin iphone14
+        string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
 
-        form.AddBinaryData("audioA", fileData, selectedDevice + ".wav", "audio/wav");//hanlin iPad
+        form.AddBinaryData("audioA", fileData, selectedDevice + timestamp + ".wav", "audio/wav");//hanlin iPad
         
         form.AddBinaryData("audioB", fileData, filePath, "audio/wav");
 

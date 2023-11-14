@@ -42,6 +42,7 @@ MonoBehaviour:
   - LoadImage
   - PlaceOnAir
   - StartLoadImage
+  - StartLoadData
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0
