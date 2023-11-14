@@ -59,6 +59,7 @@ public class PostFile : MonoBehaviour
 {
     // public PlaceText placeText;
     public string selectedDevice;
+    public string filename;
     
     // private string url = "http://10.100.20.78:6789/upload"; 
     // private string url = "http://10.100.20.78:6788/upload"; 
@@ -86,10 +87,11 @@ public class PostFile : MonoBehaviour
         
         // form.AddBinaryData("audioA", fileData, "No1audio.wav", "audio/wav");//hanlin iphone14
         string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+        filename = selectedDevice + timestamp; 
 
-        form.AddBinaryData("audioA", fileData, selectedDevice + timestamp + ".wav", "audio/wav");//hanlin iPad
+        form.AddBinaryData("audioA", fileData, filename+ ".wav", "audio/wav");//hanlin iPad
         
-        form.AddBinaryData("audioB", fileData, filePath, "audio/wav");
+        // form.AddBinaryData("audioB", fileData, filePath, "audio/wav");
 
         using (UnityWebRequest request = UnityWebRequest.Post(url, form))
         {

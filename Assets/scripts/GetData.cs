@@ -18,19 +18,26 @@ public class GetData : MonoBehaviourPunCallbacks
     public string selectedDevice;
     public float Delay;
     private string imageURL = "http://10.100.5.53:6789/images/"; // Replace with your server's image endpoint
+    
+    private string _filename;
 
+    private GameObject voiceObj;
+    private PostFile _postFile;
     void Start()
     {
         if (photonView.IsMine || !PhotonNetwork.IsConnected)
         {
             photonView.RPC(nameof(StartLoadData), RpcTarget.AllBuffered);
         }
+        voiceObj = GameObject.Find("Audio");
+        _postFile = voiceObj.GetComponent<PostFile>();
     }
 
     private IEnumerator LoadImageAndData(float delay)
     {
         yield return new WaitForSeconds(delay);
-        string imageEndpoint = imageURL + selectedDevice + ".png"; // Construct the URL
+        _filename = _postFile.filename;
+        string imageEndpoint = imageURL + _filename + ".png"; // Construct the URL
         using (UnityWebRequest www = UnityWebRequest.Get(imageEndpoint))
         {
             yield return www.SendWebRequest();
