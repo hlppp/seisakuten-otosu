@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8534806750482781234}
   - component: {fileID: 5067757865179930604}
   - component: {fileID: 2990493981795067715}
+  - component: {fileID: 1803879447665340098}
+  - component: {fileID: 885271528351402713}
   m_Layer: 0
   m_Name: CanvasObject
   m_TagString: Untagged
@@ -109,11 +111,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97086560973635461}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afa4dc66b6bbd47909342dc8b0c763cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  freq: 0
   text_image: {fileID: 5780544959782023134}
   selectedDevice: Pad
   Delay: 3
@@ -125,6 +128,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97086560973635461}
   m_CullTransparentMesh: 1
+--- !u!65 &1803879447665340098
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97086560973635461}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &885271528351402713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97086560973635461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec66692caf9304af79a9a36afa65a0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text_image: {fileID: 5780544959782023134}
+  selectedDevice: Pad
+  Delay: 3
 --- !u!1 &850042139066374787
 GameObject:
   m_ObjectHideFlags: 0
