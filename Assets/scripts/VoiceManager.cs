@@ -5,6 +5,9 @@ using UnityEngine;
 public class VoiceManager : MonoBehaviour
 {
     public AudioSource audioSource;
+    public double FadeOutSeconds = 1.0; // フェードアウトにかかる時間（秒）
+    private bool IsFadeOut = true;
+    private double FadeDeltaTime = 0;
     public AudioClip C2;
     public AudioClip C2sharp;
     public AudioClip D2;
@@ -43,28 +46,28 @@ public class VoiceManager : MonoBehaviour
     public AudioClip B4;
     public AudioClip C5;
 
-    //public AudioClip a3;
-
-    // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // フェードアウト機能
+        if (IsFadeOut)
+        {
+            FadeDeltaTime += Time.deltaTime;
+            if (FadeDeltaTime >= FadeOutSeconds)
+            {
+                FadeDeltaTime = FadeOutSeconds;
+                IsFadeOut = false;
+            }
+            audioSource.volume = (float)(1.0 - FadeDeltaTime / FadeOutSeconds);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //StringController stringController = other.gameObject.GetComponent<StringController>();  // 弦にアタッチされたスクリプトを取得
-        //float strPitch = stringController.pitch;    // 弦から鳴る音の高さについての値を取得
-
-        // 文字から鳴らす音の高さを取得
-        //SetImage setimage = other.gameObject.Getcomponent<SetImage>();
-        //int pitch = setimage.freq;
         float pitch = other.gameObject.GetComponent<TextAlpha>().TextFreq;
 
         switch (pitch)
