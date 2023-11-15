@@ -24,4 +24,8 @@ public class FreqMan : MonoBehaviour
         DeviceFreq = (int)freqSlider.value;
         Debug.Log("Device Freq: " + DeviceFreq);
     }
+    public void ResetDeviceFreq()
+    {
+        DeviceFreq = 0;
+    }
 }

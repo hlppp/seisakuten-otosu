@@ -45,12 +45,20 @@ public class TextAlpha : MonoBehaviour
     private void UpdateAlpha()
     {
         Debug.Log("Begin updating alpha");
-        float d = Mathf.Abs(_deviceFreq - TextFreq);
-        if (d > 50)
+        if (_deviceFreq == 0)
         {
-            d = 50;
+            _alpha = 1;
+            _textImage.color = new Color(1, 1, 1, _alpha);
         }
-        _alpha = (50-d)/ 50;
-        _textImage.color = new Color(1, 1, 1, _alpha);
+        else
+        {
+            float d = Mathf.Abs(_deviceFreq - TextFreq);
+            if (d > 50)
+            {
+                d = 50;
+            }
+            _alpha = (50-d)/ 50;
+            _textImage.color = new Color(1, 1, 1, _alpha);
+        }
     }
 }
