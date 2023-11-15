@@ -305,7 +305,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 22732926}
-  b3: {fileID: 8300000, guid: a6517366c46b14a2aa0b100cd8a04d5a, type: 3}
+  C2: {fileID: 8300000, guid: ca6a429cfadb2408ebb544fa423a4401, type: 3}
+  C2sharp: {fileID: 8300000, guid: 604306efb04dd42d5a6801ab8c096d45, type: 3}
+  D2: {fileID: 8300000, guid: ed3a9faedfa4a4207806cb9f5f29a32a, type: 3}
+  D2sharp: {fileID: 8300000, guid: 5fbd78212f6394407b9ed53fc652d5eb, type: 3}
+  E2: {fileID: 8300000, guid: 8c4db0dd74ce9423c87298255856346a, type: 3}
+  F2: {fileID: 8300000, guid: 985f8b9dfb514482d997eb433446a938, type: 3}
+  F2sharp: {fileID: 8300000, guid: 9358b1d5500e1467d95e5bb437d32ae3, type: 3}
+  G2: {fileID: 8300000, guid: aa3f1495e98f4454b9307ee59783877b, type: 3}
+  G2sharp: {fileID: 8300000, guid: 90f4e3bc7b8724eb8ae035046f723239, type: 3}
+  A2: {fileID: 8300000, guid: f550749e4756a4a6eb41b26bcd1fb14f, type: 3}
+  A2sharp: {fileID: 8300000, guid: 95f59000d5596436c91150b4bd16eac3, type: 3}
+  B2: {fileID: 8300000, guid: 2bbd3f28b93f94892a452cce7bea61b1, type: 3}
+  C3: {fileID: 8300000, guid: cd22d7513bd9e4342aa5b24330e8a405, type: 3}
+  C3sharp: {fileID: 8300000, guid: 300cddaa19a5348e8842df3991e98de0, type: 3}
+  D3: {fileID: 8300000, guid: 50906da20e28f40c5857b03bfb877729, type: 3}
+  D3sharp: {fileID: 8300000, guid: 712a427f392e14fffa5b1dc7614513dc, type: 3}
+  E3: {fileID: 8300000, guid: bc273f8c2612a453181a7cb209a9ec2b, type: 3}
+  F3: {fileID: 8300000, guid: e23dc55b307eb4e61848347fd6089282, type: 3}
+  F3sharp: {fileID: 8300000, guid: ae17f8928e80d4ce8b73c3d105da5171, type: 3}
+  G3: {fileID: 8300000, guid: 0a26018f544374bb6b2b2b01bd0eaf60, type: 3}
+  G3sharp: {fileID: 8300000, guid: 3c6de0e9f3eac434697bc619004c3c36, type: 3}
+  A3: {fileID: 8300000, guid: c4cc82e267f4f4a8faf0dbb23dfda3fa, type: 3}
+  A3sharp: {fileID: 8300000, guid: d6b3b79ad39df44ad82c8741d244c4cc, type: 3}
+  B3: {fileID: 8300000, guid: b90aa20ca4803474d87b696bce51c24d, type: 3}
+  C4: {fileID: 8300000, guid: 0a04894e0c60a4b8b8638be72ed4580d, type: 3}
+  C4sharp: {fileID: 8300000, guid: 4e05d757c237946c18b901de40ee0de2, type: 3}
+  D4: {fileID: 8300000, guid: 26236562b884846f9ab3d3b7eee9c7c7, type: 3}
+  D4sharp: {fileID: 8300000, guid: 066c7cd5cc4fa40b2a55cc5d2dbc248f, type: 3}
+  E4: {fileID: 8300000, guid: bf15e67ff9d3f4f899e3b2dd0216dd0d, type: 3}
+  F4: {fileID: 8300000, guid: 04ba2ad53733d4fcfa06c057adb33b2a, type: 3}
+  F4sharp: {fileID: 8300000, guid: 0b9dfa21874b2407fa94e9ad24dbc70e, type: 3}
+  G4: {fileID: 8300000, guid: 7691633394d0a44fdba1654b025177fa, type: 3}
+  G4sharp: {fileID: 8300000, guid: ffb7a5b28b39e4f50ad6197eea5e0073, type: 3}
+  A4: {fileID: 8300000, guid: 7d6193c8ddbf64ef6818d9af47377b47, type: 3}
+  A4sharp: {fileID: 8300000, guid: 1b5f204554427434e82db2f37c0aed68, type: 3}
+  B4: {fileID: 8300000, guid: fd79f2ce4ce024f23a0feaa0c7afca06, type: 3}
+  C5: {fileID: 8300000, guid: 98219eaed966941be84b278a8d16d601, type: 3}
 --- !u!82 &22732926
 AudioSource:
   m_ObjectHideFlags: 0
@@ -422,7 +458,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 10}
+  m_Center: {x: 0, y: 0, z: 7}
 --- !u!54 &22732929
 Rigidbody:
   m_ObjectHideFlags: 0
