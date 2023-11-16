@@ -15,10 +15,11 @@ public class GetData : MonoBehaviourPunCallbacks
     }
 
     public Image text_image;
-    public string selectedDevice;
+    // public string selectedDevice;
     public float Delay;
-    private string imageURL = "http://10.100.5.53:6789/images/"; // TokyoU000
+    // private string imageURL = "http://10.100.5.53:6789/images/"; // TokyoU000
     //private string imageURL = "http://192.168.1.103:6789/images/"; // HomeA
+    private string imageURL = "http://10.100.132.68:6789/images/"; 
     private string _filename;
     public int tfreq;
 
@@ -60,7 +61,7 @@ public class GetData : MonoBehaviourPunCallbacks
                 {
                     text_image.enabled = true;
                     text_image.sprite = newSprite;
-                    text_image.rectTransform.localScale = new Vector3(-newSprite.bounds.size.x / 1000f, newSprite.bounds.size.y / 1000f, 1f);
+                    text_image.rectTransform.localScale = new Vector3(-newSprite.bounds.size.x / 2000f, newSprite.bounds.size.y / 2000f, 1f);
                 }
                 else
                 {

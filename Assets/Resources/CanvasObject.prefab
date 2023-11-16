@@ -155,8 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text_image: {fileID: 5780544959782023134}
-  selectedDevice: Pad
-  Delay: 3
+  Delay: 4
   tfreq: 0
 --- !u!114 &6673266834219629779
 MonoBehaviour:

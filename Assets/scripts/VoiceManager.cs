@@ -6,7 +6,7 @@ public class VoiceManager : MonoBehaviour
 {
     public AudioSource audioSource;
     public double FadeOutSeconds = 1.0; // フェードアウトにかかる時間（秒）
-    private bool IsFadeOut = true;
+    public bool IsFadeOut;
     private double FadeDeltaTime = 0;
     public AudioClip C2;
     public AudioClip C2sharp;
