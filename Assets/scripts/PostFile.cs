@@ -52,16 +52,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using System;
 
 
 public class PostFile : MonoBehaviour
 {
     // public PlaceText placeText;
     public string selectedDevice;
+    [HideInInspector] public string filename;
     
     // private string url = "http://10.100.20.78:6789/upload"; 
     // private string url = "http://10.100.20.78:6788/upload"; 
-    private string url = "http://192.168.100.170:6789/upload"; 
+    // private string url = "http://192.168.100.170:6789/upload"; 
+    // private string url = "http://192.168.1.103:6789/upload"; //HomeA
+    // private string url = "http://10.100.5.53:6789/upload"; // TokyoU000
+    private string url = "http://10.100.132.68:6789/upload";
+    
     // void start()
     // {
     //     string selectedDevice = placeText.selectedDevice;
@@ -81,10 +87,12 @@ public class PostFile : MonoBehaviour
         WWWForm form = new WWWForm();
         
         // form.AddBinaryData("audioA", fileData, "No1audio.wav", "audio/wav");//hanlin iphone14
+        string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+        filename = selectedDevice + timestamp; 
 
-        form.AddBinaryData("audioA", fileData, selectedDevice + ".wav", "audio/wav");//hanlin iPad
+        form.AddBinaryData("audioA", fileData, filename+ ".wav", "audio/wav");//hanlin iPad
         
-        form.AddBinaryData("audioB", fileData, filePath, "audio/wav");
+        // form.AddBinaryData("audioB", fileData, filePath, "audio/wav");
 
         using (UnityWebRequest request = UnityWebRequest.Post(url, form))
         {
