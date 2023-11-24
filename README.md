@@ -12,5 +12,6 @@ It was exhibited at "iii Exhibision 2023 学藝運動" at the University of Toky
 
 ![DSC00980](https://github.com/hlppp/seisakuten-otosu/assets/91582244/a75bc724-20b3-497f-bc09-1520658326ed)
 
+![DSC00983](https://github.com/hlppp/seisakuten-otosu/assets/91582244/f23a4ac1-8d71-42b0-92a7-f54ca7cb2889)
 
 <img width="1024" alt="Otosu" src="https://github.com/hlppp/seisakuten-otosu/assets/91582244/7b1cda38-1a35-4719-82fb-87c856ffdc02">
