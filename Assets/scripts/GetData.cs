@@ -18,8 +18,8 @@ public class GetData : MonoBehaviourPunCallbacks
     // public string selectedDevice;
     public float Delay;
     // private string imageURL = "http://10.100.5.53:6789/images/"; // TokyoU000
-    //private string imageURL = "http://192.168.1.103:6789/images/"; // HomeA
-    private string imageURL = "http://10.100.132.68:6789/images/"; 
+    private string imageURL = "http://192.168.1.103:6789/images/"; // HomeA
+    //private string imageURL = "http://10.100.132.68:6789/images/"; 
     private string _filename;
     public int tfreq;
 
@@ -27,6 +27,11 @@ public class GetData : MonoBehaviourPunCallbacks
     private PostFile _postFile;
     private TextAlpha _textAlpha;
     private string end;
+    
+    private GameObject _freqManObj;
+    private FreqMan _freqMan;
+    private int _CdeviceFreq;
+    
     void Start()
     {
         if (photonView.IsMine || !PhotonNetwork.IsConnected)
@@ -37,6 +42,11 @@ public class GetData : MonoBehaviourPunCallbacks
         voiceObj = GameObject.Find("Audio");
         _postFile = voiceObj.GetComponent<PostFile>();
         _textAlpha = GetComponent<TextAlpha>();
+        
+        _freqManObj = GameObject.Find("FrequencyManager");
+        _freqMan = _freqManObj.GetComponent<FreqMan>();
+        _CdeviceFreq = _freqMan.DeviceFreq;
+        _textAlpha.TextFreq = _CdeviceFreq;
     }
 
     private IEnumerator LoadImageAndData(string endpoint)
@@ -51,7 +61,8 @@ public class GetData : MonoBehaviourPunCallbacks
                 ServerResponse response = JsonUtility.FromJson<ServerResponse>(www.downloadHandler.text); 
                 tfreq = response.frequency;
                 Debug.Log("Frequency: " + tfreq);
-                _textAlpha.TextFreq = tfreq;
+                //change this step to make it depend on the current device frequency
+                //_textAlpha.TextFreq = tfreq;
                 byte[] imageBytes = Convert.FromBase64String(response.image_data);
                 Texture2D texture = new Texture2D(2, 2);
                 texture.LoadImage(imageBytes); // Load the image

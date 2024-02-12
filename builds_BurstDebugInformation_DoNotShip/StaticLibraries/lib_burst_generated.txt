@@ -102,11 +102,6 @@ Library: /Users/hanlin/Desktop/Unity trials/seisakuten-otosu/Temp/StagingArea/St
 --compilation-defines=NET_STANDARD_2_1
 --compilation-defines=NETSTANDARD
 --compilation-defines=NETSTANDARD2_1
---compilation-defines=DEVELOPMENT_BUILD
---compilation-defines=ENABLE_PROFILER
---compilation-defines=DEBUG
---compilation-defines=TRACE
---compilation-defines=UNITY_ASSERTIONS
 --compilation-defines=UNITY_PRO_LICENSE
 --compilation-defines=ENABLE_CUSTOM_RENDER_TEXTURE
 --compilation-defines=ENABLE_DIRECTOR
@@ -119,6 +114,10 @@ Library: /Users/hanlin/Desktop/Unity trials/seisakuten-otosu/Temp/StagingArea/St
 --compilation-defines=ENABLE_LEGACY_INPUT_MANAGER
 --compilation-defines=TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 --compilation-defines=UNITY_XR_ARKIT_LOADER_ENABLED
+--compilation-defines=PHOTON_UNITY_NETWORKING
+--compilation-defines=PUN_2_0_OR_NEWER
+--compilation-defines=PUN_2_OR_NEWER
+--compilation-defines=PUN_2_19_OR_NEWER
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
@@ -153,7 +152,6 @@ Library: /Users/hanlin/Desktop/Unity trials/seisakuten-otosu/Temp/StagingArea/St
 --linker-options=min-ios-version=12.0
 --generate-link-xml=Temp/burst.link.xml
 --temp-folder=/Users/hanlin/Desktop/Unity trials/seisakuten-otosu/Temp/Burst
---debug=Full
 --generate-static-linkage-methods
 --key-folder=/Applications/Unity/Hub/Editor/2021.3.25f1/PlaybackEngines/iOSSupport
 --decode-folder=/Users/hanlin/Desktop/Unity trials/seisakuten-otosu/Library/Burst

@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9fc3039f-1914-4b8b-804e-fd19cefa6353" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.seisakuten-otosu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.seisakuten-otosu/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Otosu Scenes/ExtraScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Otosu Scenes/ExtraScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/CanvasObject.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/CanvasObject.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scripts/FreqMan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/FreqMan.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/scripts/GetData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/GetData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/scripts/PostFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/PostFile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/TextAlpha.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/TextAlpha.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builds_BurstDebugInformation_DoNotShip/StaticLibraries/lib_burst_generated.txt" beforeDir="false" afterPath="$PROJECT_DIR$/builds_BurstDebugInformation_DoNotShip/StaticLibraries/lib_burst_generated.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +42,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;UI&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lab&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -112,6 +111,8 @@
       <option name="presentableId" value="Default" />
       <updated>1699861436113</updated>
       <workItem from="1699861438478" duration="2967000" />
+      <workItem from="1707714417204" duration="3666000" />
+      <workItem from="1707724125740" duration="813000" />
     </task>
     <servers />
   </component>
