@@ -53,11 +53,11 @@ public class TextAlpha : MonoBehaviour
         else
         {
             float d = Mathf.Abs(_deviceFreq - TextFreq);
-            if (d > 50)
+            if (d > 20)
             {
-                d = 50;
+                d = 20;
             }
-            _alpha = (50-d)/ 50;
+            _alpha = (20-d)/ 20;
             _textImage.color = new Color(1, 1, 1, _alpha);
         }
     }
