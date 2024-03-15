@@ -18,8 +18,9 @@ public class GetData : MonoBehaviourPunCallbacks
     // public string selectedDevice;
     public float Delay;
     // private string imageURL = "http://10.100.5.53:6789/images/"; // TokyoU000
-    private string imageURL = "http://192.168.1.103:6789/images/"; // HomeA
+    // private string imageURL = "http://192.168.1.103:6789/images/"; // HomeA
     //private string imageURL = "http://10.100.132.68:6789/images/"; 
+    private string imageURL = "http://192.168.100.89:6789/images/"; // Inami5G
     private string _filename;
     public int tfreq;
 

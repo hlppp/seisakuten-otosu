@@ -64,15 +64,21 @@ public class PostFile : MonoBehaviour
     // private string url = "http://10.100.20.78:6789/upload"; 
     // private string url = "http://10.100.20.78:6788/upload"; 
     // private string url = "http://192.168.100.170:6789/upload"; 
-    private string url = "http://192.168.1.103:6789/upload"; //HomeA
+    //private string url = "http://192.168.1.103:6789/upload"; //HomeA
     // private string url = "http://10.100.5.53:6789/upload"; // TokyoU000
     // private string url = "http://10.100.132.68:6789/upload";
+    private string url = "http://192.168.100.89:6789/upload"; //Inami5G
     
-    // void start()
-    // {
-    //     string selectedDevice = placeText.selectedDevice;
-    //     Debug.Log(selectedDevice+".wav");
-    // }
+    private GameObject _freqManObj;
+    private FreqMan _freqMan;
+    private int CdeviceFreq;
+    
+    void Start()
+    {
+        _freqManObj = GameObject.Find("FrequencyManager");
+        _freqMan = _freqManObj.GetComponent<FreqMan>();
+        CdeviceFreq = _freqMan.DeviceFreq;
+    }
 
 
     public void UploadWavFile(string filePath)
@@ -88,7 +94,8 @@ public class PostFile : MonoBehaviour
         
         // form.AddBinaryData("audioA", fileData, "No1audio.wav", "audio/wav");//hanlin iphone14
         string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
-        filename = selectedDevice + timestamp; 
+        CdeviceFreq = _freqMan.DeviceFreq;
+        filename = CdeviceFreq + selectedDevice + timestamp; 
 
         form.AddBinaryData("audioA", fileData, filename+ ".wav", "audio/wav");//hanlin iPad
         
