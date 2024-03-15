@@ -3145,6 +3145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedDevice: Inami1
   filename: 
+  FrequencyManager: {fileID: 718756312}
 --- !u!114 &782628377
 MonoBehaviour:
   m_ObjectHideFlags: 0
