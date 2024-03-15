@@ -78,12 +78,16 @@ public class PostFile : MonoBehaviour
     //     Debug.Log(selectedDevice+".wav");
     // }
 
+    private void Start()
+    {
+        _freqMan = FrequencyManager.GetComponent<FreqMan>();
+        _deviceFreq = _freqMan.DeviceFreq;
+    }
+
 
     public void UploadWavFile(string filePath)
     {
         StartCoroutine(SendRequest(filePath));
-        _freqMan = FrequencyManager.GetComponent<FreqMan>();
-        _deviceFreq = _freqMan.DeviceFreq;
     }
 
     private IEnumerator SendRequest(string filePath)
@@ -94,6 +98,7 @@ public class PostFile : MonoBehaviour
         
         // form.AddBinaryData("audioA", fileData, "No1audio.wav", "audio/wav");//hanlin iphone14
         string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+        _deviceFreq = _freqMan.DeviceFreq;
         filename = selectedDevice + timestamp + "-" +_deviceFreq.ToString();; 
 
         form.AddBinaryData("audioA", fileData, filename+ ".wav", "audio/wav");//hanlin iPad
